@@ -1,0 +1,33 @@
+:host{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+
+    padding: 8px;
+}
+
+.button-mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    pointer-events: none
+}
+.disable-mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    visibility: hidden;
+    pointer-events: none
+}

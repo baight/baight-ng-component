@@ -1,0 +1,14 @@
+<cdz-center>
+
+<div class="content" AlertInOutAnimation [state]='state'>
+  <div class="text-holder">
+      <span #title class="title" ><b><pre>{{_title}}</pre></b></span>
+      <span #message class="message" ><pre>{{_message}}</pre></span>
+  </div>
+  <div class="button-holder">
+    <cdz-button class="button" [config]='alertButtonConfig' (click)="clickCancel($event)" style="margin-right: 1px;">取消</cdz-button>
+    <cdz-button class="button" [config]='alertButtonConfig' (click)="clickNext($event)">确定</cdz-button>
+  </div>
+</div>
+    
+</cdz-center>

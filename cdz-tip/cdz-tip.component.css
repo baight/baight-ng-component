@@ -1,0 +1,36 @@
+
+:host{
+    position: absolute;
+    z-index:1001;
+    pointer-events:none;
+    padding-bottom: 0.6rem;
+    /* box-shadow: 0 10px 20px rgba(0, 2, 4, 0.5); */
+}
+.content{
+    padding: 0.7rem;
+    border-radius: 6px;
+    color: white;
+    margin: 0;
+}
+
+.bg-color{
+    background-color:rgba(0, 0, 0, 0.8);
+}
+
+pre{
+    margin: 0;
+}
+
+.triangle{
+    position: absolute;
+    left: 50%;
+    margin: 0;
+    width: 0; 
+	height: 0; 
+	border-left: 0.6rem solid transparent;
+	border-right: 0.6rem solid transparent;
+	border-top: 0.6rem solid rgba(0, 0, 0, 0.8);
+	font-size: 0;
+    line-height: 0;
+    transform: translate(-50%);
+}

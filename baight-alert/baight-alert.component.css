@@ -1,0 +1,66 @@
+:host {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:1001;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events:all;
+    background-color:rgba(0, 0, 0, 0.3);
+  }
+
+.content{
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 2, 4, 0.5);
+    color: black;
+    pointer-events:all;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.text-holder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    margin-bottom: 1px;
+    padding-top: 1.6rem;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+    width: 100%;
+}
+.button-holder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.button{
+    min-width: 7rem;
+    height: 3rem;
+    flex-grow:1;
+}
+
+.title{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+pre{
+    margin: 0;
+}
+.message{
+    margin-bottom: 1rem;
+    text-align: center;
+}
