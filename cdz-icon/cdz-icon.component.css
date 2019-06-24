@@ -1,0 +1,7 @@
+:host{
+    display: inline-flex;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    background-color: cadetblue;
+}
+
