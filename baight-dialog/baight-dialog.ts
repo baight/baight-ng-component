@@ -12,6 +12,12 @@ export class BaightDialog{
   private mouseDownTarget = null
   constructor(protected host:ElementRef, protected render:Renderer2, ZIndex=1000){
     this.render.setStyle(this.host.nativeElement, "z-index", ZIndex.toString())
+    this.render.setStyle(this.host.nativeElement, "position", "fixed")
+    this.render.setStyle(this.host.nativeElement, "top", "0")
+    this.render.setStyle(this.host.nativeElement, "bottom", "0")
+    this.render.setStyle(this.host.nativeElement, "left", "0")
+    this.render.setStyle(this.host.nativeElement, "right", "0")
+    this.render.setStyle(this.host.nativeElement, "display", "inline-flex")
 
     this.render.listen(this.host.nativeElement, "mousedown", (event:MouseEvent)=>{
       this.mouseDownTarget = event.target;

@@ -9,6 +9,7 @@
     overflow: hidden;
 
     padding: 8px;
+    border-radius: 0.3rem;
 }
 
 .button-mask{

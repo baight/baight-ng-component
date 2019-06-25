@@ -28,7 +28,10 @@ export class CDZButtonComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.renderer.setElementStyle(this.host.nativeElement, 'border-radius', this.borderRadius());
+    let borderRadius = this.borderRadius()
+    if (this.borderRadius) {
+      this.renderer.setElementStyle(this.host.nativeElement, 'border-radius', borderRadius);
+    }
     this.updateUI();
   }
 
@@ -172,7 +175,7 @@ export class CDZButtonComponent implements OnInit, OnChanges {
       return this.config["borderRadius"]
     }
     else {
-      return '0.3rem'
+      return null
     }
   }
 
