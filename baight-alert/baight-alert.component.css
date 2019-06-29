@@ -16,8 +16,8 @@
 
 .content{
     position: relative;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 2, 4, 0.5);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.3rem 0.8rem rgba(0, 2, 4, 0.3);
     color: black;
     pointer-events:all;
 
