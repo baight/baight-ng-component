@@ -51,6 +51,9 @@ export class BaightDialog{
       this.render.setStyle(this.host.nativeElement, 'opacity', "0")
       this.setOpacityAnimated()
     }
+    else {
+      this.hasInAnimationFinished = true
+    }
     window.setTimeout(event=>{
         this.render.setStyle(this.host.nativeElement, 'opacity', "1")
         this.state = 'in'
