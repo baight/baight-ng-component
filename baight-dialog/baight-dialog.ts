@@ -9,6 +9,7 @@ export class BaightDialog{
   @Output()
   closed = new EventEmitter();
 
+  private hasInAnimationFinished: boolean = false
   private mouseDownTarget = null
   constructor(protected host:ElementRef, protected render:Renderer2, ZIndex=1000){
     this.render.setStyle(this.host.nativeElement, "z-index", ZIndex.toString())
@@ -32,9 +33,13 @@ export class BaightDialog{
     })
 
     this.render.listen(this.host.nativeElement, 'transitionend', (event:any)=>{
-      if (this.state == 'out' && event.propertyName == 'opacity' &&
-      event.target == this.host.nativeElement) {
-        this.closed.next();
+      if (event.propertyName == 'opacity' && event.target == this.host.nativeElement) {
+        if (this.state == 'out' ) {
+          this.closed.next();
+        }
+        else{
+          this.hasInAnimationFinished = true
+        }
       }
     })
     this.setOpacityAnimated()
@@ -53,6 +58,7 @@ export class BaightDialog{
   }
 
   hide(fadeOut:boolean=true){
+    if (this.hasInAnimationFinished) {
       if (fadeOut) {
         this.setOpacityAnimated()
       }
@@ -65,6 +71,12 @@ export class BaightDialog{
         this.state = 'out'
         this.render.setStyle(this.host.nativeElement, 'opacity', "0")
       }, 0.1)
+    }
+    else {
+      this.render.setStyle(this.host.nativeElement, 'opacity', "0")
+      this.state = 'out'
+      this.closed.next();
+    }
   }
 
   setOpacityAnimated(){
