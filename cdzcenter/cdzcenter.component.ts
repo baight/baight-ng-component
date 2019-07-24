@@ -17,7 +17,7 @@ export class CDZCenterComponent implements OnInit {
     }
   }
 
-  @ViewChild('topHolder') topHolder:ElementRef
+  @ViewChild('topHolder', {static: true, read: ElementRef}) topHolder:ElementRef
 
   constructor(private render:Renderer2) { }
 

@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Renderer, ElementRef, ViewChild } from '@angu
   styleUrls: ['./cdzscroll.component.css']
 })
 export class CDZScrollComponent implements OnInit {
-  @ViewChild("baight", {read: ElementRef}) positionDiv:ElementRef
+  @ViewChild("baight", {static: true, read: ElementRef}) positionDiv:ElementRef
 
   private _page: number
   @Input()

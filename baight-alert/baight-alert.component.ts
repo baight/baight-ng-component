@@ -7,10 +7,10 @@ import { BaightDialog } from '../baight-dialog/baight-dialog';
   styleUrls: ['./baight-alert.component.css'],
 })
 export class BaightAlertComponent extends BaightDialog implements OnInit {
-  @ViewChild("title", { read: ElementRef }) 
+  @ViewChild("title", {static: true, read: ElementRef}) 
   titleEle: ElementRef;
 
-  @ViewChild("message", { read: ElementRef }) 
+  @ViewChild("message", {static: true, read: ElementRef}) 
   messageEle: ElementRef;
 
   _title;

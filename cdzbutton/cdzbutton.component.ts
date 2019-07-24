@@ -18,10 +18,10 @@ export class CDZButtonComponent implements OnInit, OnChanges {
 
   @Input() enable = true
 
-  @ViewChild("button_mask", { read: ElementRef }) 
+  @ViewChild("button_mask", {static: true, read: ElementRef}) 
   buttonMask: ElementRef;
 
-  @ViewChild("disable_mask", { read: ElementRef }) 
+  @ViewChild("disable_mask", {static: true, read: ElementRef}) 
   disableMask: ElementRef;
 
   constructor(private renderer: Renderer, private host:ElementRef) { 

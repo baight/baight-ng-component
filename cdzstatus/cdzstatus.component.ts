@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Renderer, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'cdz-status',
@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Renderer, ElementRef, ViewChild } from '@angu
   styleUrls: ['./cdzstatus.component.css']
 })
 export class CDZStatusComponent implements OnInit {
-  @ViewChild("mum", { read: ElementRef }) 
+  @ViewChild("mum", {static: true, read: ElementRef}) 
   mum: ElementRef;
 
   tipText = ""
@@ -19,10 +19,10 @@ export class CDZStatusComponent implements OnInit {
       return
     }
     if (status.startsWith("loading")) {
-      this.renderer.setElementStyle(this.mum.nativeElement, "visibility", "visible")
+      this.renderer.setStyle(this.mum.nativeElement, "visibility", "visible")
     }
     else {
-      this.renderer.setElementStyle(this.mum.nativeElement, "visibility", "hidden")
+      this.renderer.setStyle(this.mum.nativeElement, "visibility", "hidden")
     }
     this.tipText = this.getTextFrom(status)
   }
@@ -41,7 +41,7 @@ export class CDZStatusComponent implements OnInit {
   }
 
   
-  constructor(private ele:ElementRef, private renderer: Renderer) { }
+  constructor(private ele:ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
   }
