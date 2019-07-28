@@ -1,4 +1,57 @@
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes, query, group, animateChild } from '@angular/animations';
+
+// Routable animations
+export const slideInAnimation =
+  trigger('routeAnimation', [
+    transition('root => detail', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '100%'})
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('300ms ease-out', style({ left: '-100%'}))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%'}))
+        ])
+      ]),
+      query(':enter', animateChild()),
+    ]),
+    transition('detail => root', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '-100%'})
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('300ms ease-out', style({ left: '100%'}))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%'}))
+        ])
+      ]),
+      query(':enter', animateChild()),
+    ])
+  ]);
 
 // 淡入淡出 Host
 export const FadeInOutAnimationHost = {
