@@ -1,5 +1,6 @@
 import { trigger, state, style, transition, animate, keyframes, query, group, animateChild } from '@angular/animations';
 
+
 // Routable animations
 export const slideInAnimation =
   trigger('routeAnimation', [
@@ -14,15 +15,15 @@ export const slideInAnimation =
         })
       ]),
       query(':enter', [
-        style({ left: '100%'})
+        style({ left: '30%'})
       ]),
       query(':leave', animateChild()),
       group([
         query(':leave', [
-          animate('300ms ease-out', style({ left: '-100%'}))
+          animate('300ms ease-out', style({ left: '-30%', opacity: 0}))
         ]),
         query(':enter', [
-          animate('300ms ease-out', style({ left: '0%'}))
+          animate('300ms ease-out', style({ left: '0%', opacity: 1}))
         ])
       ]),
       query(':enter', animateChild()),
@@ -38,15 +39,15 @@ export const slideInAnimation =
         })
       ]),
       query(':enter', [
-        style({ left: '-100%'})
+        style({ left: '-30%'})
       ]),
       query(':leave', animateChild()),
       group([
         query(':leave', [
-          animate('300ms ease-out', style({ left: '100%'}))
+          animate('300ms ease-out', style({ left: '30%', opacity: 0}))
         ]),
         query(':enter', [
-          animate('300ms ease-out', style({ left: '0%'}))
+          animate('300ms ease-out', style({ left: '0%', opacity: 1}))
         ])
       ]),
       query(':enter', animateChild()),
