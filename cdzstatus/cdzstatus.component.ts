@@ -9,6 +9,9 @@ export class CDZStatusComponent implements OnInit {
   @ViewChild("mum", {static: true, read: ElementRef}) 
   mum: ElementRef;
 
+  @ViewChild("statusDiv", {static: true, read: ElementRef}) 
+  statusDiv: ElementRef;
+
   tipText = ""
 
   @Input() slot: 'center' | 'gold';
@@ -18,13 +21,19 @@ export class CDZStatusComponent implements OnInit {
     if (!status) {
       return
     }
-    if (status.startsWith("loading")) {
-      this.renderer.setStyle(this.mum.nativeElement, "visibility", "visible")
+    if (status == 'none'){
+      this.renderer.setStyle(this.statusDiv.nativeElement, "display", "none")
     }
     else {
-      this.renderer.setStyle(this.mum.nativeElement, "visibility", "hidden")
+      this.renderer.setStyle(this.statusDiv.nativeElement, "display", "block")
+      if (status.startsWith("loading")) {
+        this.renderer.setStyle(this.mum.nativeElement, "visibility", "visible")
+      }
+      else {
+        this.renderer.setStyle(this.mum.nativeElement, "visibility", "hidden")
+      }
+      this.tipText = this.getTextFrom(status)
     }
-    this.tipText = this.getTextFrom(status)
   }
 
   getTextFrom(text:string): string{

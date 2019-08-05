@@ -15,7 +15,7 @@ export const slideInAnimation =
         })
       ]),
       query(':enter', [
-        style({ left: '30%'})
+        style({ left: '30%', opacity: 0})
       ]),
       query(':leave', animateChild()),
       group([
@@ -39,7 +39,7 @@ export const slideInAnimation =
         })
       ]),
       query(':enter', [
-        style({ left: '-30%'})
+        style({ left: '-30%', opacity: 0})
       ]),
       query(':leave', animateChild()),
       group([

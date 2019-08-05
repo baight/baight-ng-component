@@ -7,9 +7,10 @@
     /* box-shadow: 0 10px 20px rgba(0, 2, 4, 0.5); */
 }
 .content{
-    padding: 0.7rem;
+    padding: 1rem;
+    line-height: 1.6rem;
     border-radius: 6px;
-    color: white;
+    color: #f0f0f0;
     margin: 0;
 }
 
