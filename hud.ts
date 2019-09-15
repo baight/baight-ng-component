@@ -12,7 +12,7 @@ import { BaightLoadingComponent } from './baight-loading/baight-loading.componen
 import { BaightDialog, createBaightDialog } from './baight-dialog/baight-dialog';
 
 export class Hud {
-    constructor (private container: ViewContainerRef, private resolver: ComponentFactoryResolver) { }
+    constructor (public container: ViewContainerRef, public resolver: ComponentFactoryResolver) { }
 
     createDialog<T>(component: Type<T>, resolver: ComponentFactoryResolver) : ComponentRef<T> {
         let factory: ComponentFactory<T> = resolver.resolveComponentFactory(component);
@@ -65,7 +65,9 @@ export class Hud {
         let alert = createBaightDialog(BaightAlertComponent, this.resolver, this.container);
         alert.instance.title = title
         alert.instance.message = message
-        alert.instance.next.subscribe(next)
+        if (next) {
+            alert.instance.next.subscribe(next)
+        }
         alert.instance.show()
     }
 

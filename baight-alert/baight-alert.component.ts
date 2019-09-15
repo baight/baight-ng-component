@@ -43,11 +43,22 @@ export class BaightAlertComponent extends BaightDialog implements OnInit {
     }
   }
 
+  _messageAlign: "left" | "center" | "right" = "center"
+  get messageAlign(){
+    return this._messageAlign
+  }
+  set messageAlign(align: string) {
+    this.render.setStyle(this.messageEle.nativeElement, "text-align", align)
+  }
+
   constructor(protected host:ElementRef, protected render:Renderer2){
     super(host, render, 1001)
   }
 
+  isConfirmStyle = false
   ngOnInit() {
+    this.isConfirmStyle = (this.next.observers.length > 0) ? false : true;
+    console.log(this.next.observers)
   }
 
   @Output()
