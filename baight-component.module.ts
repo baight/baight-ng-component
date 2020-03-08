@@ -14,7 +14,6 @@ import { BaightLoadingComponent } from './baight-loading/baight-loading.componen
 import { BaightGrowingHeight } from './baight-growing-height/baight-growing-height';
 import { FadeInOutAnimation } from './baight-dialog/fade-in-out-animation';
 import { AlertInOutAnimation } from './baight-dialog/alert-in-out-animation';
-import { CDZOutletDivComponent } from './outlet-div/outlet-div.component';
 import { CDZIconComponent } from './cdz-icon/cdz-icon.component';
 
 @NgModule({
@@ -35,7 +34,6 @@ import { CDZIconComponent } from './cdz-icon/cdz-icon.component';
     BaightToastComponent,
     BaightLoadingComponent,
     BaightGrowingHeight,
-    CDZOutletDivComponent,
 
     FadeInOutAnimation,
     AlertInOutAnimation
@@ -52,7 +50,6 @@ import { CDZIconComponent } from './cdz-icon/cdz-icon.component';
     BaightAlertComponent,
     BaightToastComponent,
     BaightLoadingComponent,
-    CDZOutletDivComponent,
     BaightGrowingHeight,
 
     FadeInOutAnimation,
