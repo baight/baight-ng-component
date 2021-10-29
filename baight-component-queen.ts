@@ -5,9 +5,7 @@ import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 
 export class BaightComponentQueen extends BaightQueen{
-    public hud: Hud
-    constructor(httpClient: HttpClient, public router: Router, container: ViewContainerRef, resolver: ComponentFactoryResolver, ) {
+    constructor(httpClient: HttpClient, public router: Router, public hud: Hud) {
         super(httpClient, router)
-        this.hud = new Hud(container, resolver)
     }
 }

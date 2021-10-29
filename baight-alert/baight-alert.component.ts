@@ -1,17 +1,28 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter, ViewChild, Renderer2 } from '@angular/core';
-import { BaightDialog } from '../baight-dialog/baight-dialog';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter, ViewChild, Renderer2, AfterViewInit, AfterViewChecked, AfterContentInit } from '@angular/core';
+import { trigger, state, style, transition, animate, query, stagger } from '@angular/animations';
+import {  } from '../baight-dialog/baight-dialog';
 
 @Component({
   selector: 'baight-alert',
   templateUrl: './baight-alert.component.html',
   styleUrls: ['./baight-alert.component.css'],
 })
-export class BaightAlertComponent extends BaightDialog implements OnInit {
+export class BaightAlertComponent implements OnInit {
   @ViewChild("title", {static: true, read: ElementRef}) 
   titleEle: ElementRef;
 
   @ViewChild("message", {static: true, read: ElementRef}) 
   messageEle: ElementRef;
+
+  @Output()
+  state: "in" | "out" | string
+
+  @Output()
+  closed = new EventEmitter();
+
+  constructor(protected host:ElementRef, protected render:Renderer2){
+    //this.render.setAttribute(this.host.nativeElement, "FadeInOutAnimation", "")
+  }
 
   _title;
   @Input()
@@ -51,14 +62,12 @@ export class BaightAlertComponent extends BaightDialog implements OnInit {
     this.render.setStyle(this.messageEle.nativeElement, "text-align", align)
   }
 
-  constructor(protected host:ElementRef, protected render:Renderer2){
-    super(host, render, 1001)
-  }
-
   isConfirmStyle = false
   ngOnInit() {
     this.isConfirmStyle = (this.next.observers.length > 0) ? false : true;
-    console.log(this.next.observers)
+    setTimeout(() => {
+      this.state = "in"
+    });
   }
 
   @Output()
@@ -71,6 +80,16 @@ export class BaightAlertComponent extends BaightDialog implements OnInit {
   clickNext(event : Event){
     this.next.next()
     this.hide()
+  }
+
+  hide(){
+    this.state = 'out'
+  }
+
+  animationDone(){
+    if (this.state == 'out') {
+      this.closed.emit()
+    }
   }
 
   alertButtonConfig = {

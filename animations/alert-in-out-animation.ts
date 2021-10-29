@@ -5,7 +5,7 @@ import { Directive, ElementRef, OnDestroy, Renderer2, OnInit, Input } from '@ang
 })
 export class AlertInOutAnimation {
     private _state: 'in' | 'out'
-    @Input()
+    @Input("AlertInOutAnimation")
     set state(state: 'in' | 'out') {
         if (state == 'in' && this._state != 'in') {
             this.performShowAnimation()

@@ -12,9 +12,11 @@ import { BaightAlertComponent } from './baight-alert/baight-alert.component';
 import { BaightToastComponent } from './baight-toast/baight-toast.component';
 import { BaightLoadingComponent } from './baight-loading/baight-loading.component';
 import { BaightGrowingHeight } from './baight-growing-height/baight-growing-height';
-import { FadeInOutAnimation } from './baight-dialog/fade-in-out-animation';
-import { AlertInOutAnimation } from './baight-dialog/alert-in-out-animation';
 import { CDZIconComponent } from './cdz-icon/cdz-icon.component';
+import { AlertInOutAnimation } from './animations/alert-in-out-animation';
+import { FadeInOutAnimation } from './animations/fade-in-out-animation';
+import { FadeOutAnimation } from './animations/fade-out-animation';
+import { Hud } from './hud';
 
 @NgModule({
   imports: [
@@ -36,6 +38,7 @@ import { CDZIconComponent } from './cdz-icon/cdz-icon.component';
     BaightGrowingHeight,
 
     FadeInOutAnimation,
+    FadeOutAnimation,
     AlertInOutAnimation
   ],
   exports: [
@@ -53,6 +56,7 @@ import { CDZIconComponent } from './cdz-icon/cdz-icon.component';
     BaightGrowingHeight,
 
     FadeInOutAnimation,
+    FadeOutAnimation,
     AlertInOutAnimation
   ],
   entryComponents: [
@@ -60,11 +64,13 @@ import { CDZIconComponent } from './cdz-icon/cdz-icon.component';
     BaightAlertComponent,
     BaightToastComponent,
     BaightLoadingComponent,
-  ]
+    CDZMumComponent
+  ],
+  providers: [Hud]
 })
 
 export class BaightComponentModule { }
 
 export * from "./baight-dialog/baight-dialog"
-export * from "./baight-dialog/baight-animations"
+export * from "./animations/baight-animations"
 

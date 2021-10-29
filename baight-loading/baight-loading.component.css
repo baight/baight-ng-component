@@ -4,12 +4,14 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index:1001;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    padding-bottom: 20%;
+    pointer-events: all;
 }
 
 .content{
@@ -17,7 +19,6 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 2, 4, 0.5);
-    pointer-events: all;
 }
 
 .bg-color{

@@ -12,7 +12,7 @@ export class BaightDialog{
   private hasInAnimationFinished: boolean = false
   private mouseDownTarget = null
   constructor(protected host:ElementRef, protected render:Renderer2, ZIndex=1000){
-    this.render.setStyle(this.host.nativeElement, "z-index", ZIndex.toString())
+    //this.render.setStyle(this.host.nativeElement, "z-index", ZIndex.toString())
     this.render.setStyle(this.host.nativeElement, "position", "fixed")
     this.render.setStyle(this.host.nativeElement, "top", "0")
     this.render.setStyle(this.host.nativeElement, "bottom", "0")
