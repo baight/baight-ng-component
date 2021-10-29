@@ -17,6 +17,7 @@ import { AlertInOutAnimation } from './animations/alert-in-out-animation';
 import { FadeInOutAnimation } from './animations/fade-in-out-animation';
 import { FadeOutAnimation } from './animations/fade-out-animation';
 import { Hud } from './hud';
+import { BaightButton } from './baight-button/baight-button';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { Hud } from './hud';
     BaightToastComponent,
     BaightLoadingComponent,
     BaightGrowingHeight,
+    BaightButton,
 
     FadeInOutAnimation,
     FadeOutAnimation,
@@ -54,6 +56,7 @@ import { Hud } from './hud';
     BaightToastComponent,
     BaightLoadingComponent,
     BaightGrowingHeight,
+    BaightButton,
 
     FadeInOutAnimation,
     FadeOutAnimation,
